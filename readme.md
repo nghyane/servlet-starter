@@ -7,3 +7,7 @@ mvn clean install
 ```
 mvn jetty:run
 ```
+
+```
+mvn clean test
+```
