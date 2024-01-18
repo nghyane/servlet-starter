@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.calculator.CalculatorServiceTest" time="0.226" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.calculator.CalculatorServiceTest" time="0.285" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="VN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib"/>
-    <property name="sun.java.command" value="/Users/nghyane/Project/demo-jmockit-servlet/target/surefire/surefirebooter7484349917548818152.jar /Users/nghyane/Project/demo-jmockit-servlet/target/surefire 2024-01-14T21-55-28_465-jvmRun1 surefire4074190601292547358tmp surefire_06484560420667805931tmp"/>
+    <property name="sun.java.command" value="/Users/nghyane/Project/demo-jmockit-servlet/target/surefire/surefirebooter6623882854390462611.jar /Users/nghyane/Project/demo-jmockit-servlet/target/surefire 2024-01-17T14-16-57_600-jvmRun1 surefire4597208603880655613tmp surefire_0998946884240346252tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="surefire.test.class.path" value="/Users/nghyane/Project/demo-jmockit-servlet/target/test-classes:/Users/nghyane/Project/demo-jmockit-servlet/target/classes:/Users/nghyane/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/nghyane/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/nghyane/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/Users/nghyane/.m2/repository/org/jmockit/jmockit/1.49/jmockit-1.49.jar:/Users/nghyane/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/nghyane/Project/demo-jmockit-servlet/target/surefire/surefirebooter7484349917548818152.jar:/Users/nghyane/.m2/repository/org/jmockit/jmockit/1.49/jmockit-1.49.jar"/>
+    <property name="surefire.real.class.path" value="/Users/nghyane/Project/demo-jmockit-servlet/target/surefire/surefirebooter6623882854390462611.jar:/Users/nghyane/.m2/repository/org/jmockit/jmockit/1.49/jmockit-1.49.jar"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
@@ -62,5 +62,12 @@
     <property name="java.class.version" value="52.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testPerformAddition" classname="com.example.calculator.CalculatorServiceTest" time="0.153"/>
+  <testcase name="testPerformAddition" classname="com.example.calculator.CalculatorServiceTest" time="0.225">
+    <failure message="expected:&lt;5&gt; but was:&lt;6&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<5> but was:<6>
+	at com.example.calculator.CalculatorServiceTest.testPerformAddition(CalculatorServiceTest.java:47)
+]]></failure>
+    <system-out><![CDATA[Mock Result: 6
+Real Result: 5
+]]></system-out>
+  </testcase>
 </testsuite>

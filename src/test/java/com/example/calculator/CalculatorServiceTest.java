@@ -1,31 +1,55 @@
 package com.example.calculator;
 
 import mockit.Expectations;
+import mockit.Verifications;
 import mockit.Injectable;
 import mockit.Tested;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+
 public class CalculatorServiceTest {
-
+    // 1. khởi tạo đối tượng mock
     @Injectable
-    private MathOperation mathOperation; // Giả mạo dependency
+    private MathOperation mathOperation; 
 
+    // 2. khởi tạo đối tượng test
     @Tested
-    private CalculatorService calculatorService; // Kiểm thử đối tượng
+    private CalculatorService calculatorService; 
 
     @Test
     public void testPerformAddition() {
-        // Thiết lập kỳ vọng cho phương thức add của MathOperation
-        new Expectations() {{
-            mathOperation.add(2, 3);
-            result = 5; // Kết quả trả về khi phương thức add được gọi với tham số 2 và 3
+        int A = 2;
+        int B = 3;
+
+        int RESULT = 6;
+
+
+        new Expectations() {{  
+            // 3. kịch bản cho phương thức add()  
+            mathOperation.add(A, B);
+            result = RESULT;
         }};
 
-        // Gọi phương thức kiểm thử của CalculatorService, nó phải gọi phương thức add của MathOperation
-        int result = calculatorService.performAddition(2, 3);
+        // 4. thực thi đối tượng test
+        int mockResult = calculatorService.performAddition(A, B);
 
-        // Kiểm tra kết quả
-        assertEquals(5, result);
+        
+        // 5. khởi tạo đối tượng mới không thông qua mock
+        MathOperation mathOperationReal = new MathOperation();
+        CalculatorService calculatorService = new CalculatorService(mathOperationReal);
+        int result = calculatorService.performAddition(A, B);
+
+        System.out.println("Mock Result: " + mockResult);
+        System.out.println("Real Result: " + result);
+
+        // 6. so sánh kết quả giữa mock và real
+        assertEquals(result, mockResult);
+
+        // 7. kiểm tra số lần gọi hàm 
+        new Verifications() {{
+            mathOperation.add(A, B);
+            times = 1;
+        }};
     }
 }

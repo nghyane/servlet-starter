@@ -1,6 +1,5 @@
 package com.example.calculator;
 
-// CalculatorService.java
 public class CalculatorService {
 
     private MathOperation mathOperation;
@@ -9,7 +8,9 @@ public class CalculatorService {
         this.mathOperation = mathOperation;
     }
 
+    // phương thức cộng 2 số nguyên 
     public int performAddition(int a, int b) {
         return mathOperation.add(a, b);
     }
+
 }
